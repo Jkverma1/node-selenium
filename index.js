@@ -52,6 +52,6 @@ app.get("/thankyou", (req, res) => {
   res.render("thankyou");
 });
 
-app.listen(3000, (req, res) => {
+app.listen(process.env.PORT || 5000, (req, res) => {
   console.log("server started!");
 });
