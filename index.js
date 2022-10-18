@@ -44,6 +44,10 @@ app.get("/thankyou", (req, res) => {
   driver.executeScript(
     "document.querySelector('.report-abuse-container').style.display = 'none';"
   );
+  // cb-container
+  driver.executeScript(
+    "document.querySelector('.cb-container').style.display = 'none';"
+  );
   // driver.sleep(5000);
   // driver.close();
   // driver.findElement(webdriver.By.css("#download-btn-full")).click();
