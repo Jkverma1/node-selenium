@@ -3,8 +3,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const webdriver = require("selenium-webdriver");
-const util = require("util");
-const _ = require("underscore");
 const chromeDriver = require("chromedriver"); //chrome
 var ie = require("selenium-webdriver/ie");
 var path = require("iedriver").path;
@@ -22,6 +20,10 @@ app.get("/", (req, res) => {
 var url;
 
 app.post("/", (req, res) => {
+  const webdriver = require("selenium-webdriver");
+  const chromeDriver = require("chromedriver"); //chrome
+  var ie = require("selenium-webdriver/ie");
+  var path = require("iedriver").path;
   let SessionID = req.body.SessionID,
     clientName = req.body.NameClient;
   var newString = SessionID.replace(/-/g, "");
@@ -48,11 +50,7 @@ app.get("/thankyou", (req, res) => {
   driver.executeScript(
     "document.querySelector('.cb-container').style.display = 'none';"
   );
-  // driver.sleep(5000);
-  // driver.close();
-  // driver.findElement(webdriver.By.css("#download-btn-full")).click();
-  // driver.findElement(webdriver.By.css("#download-btn-full")).click();
-  // driver.close();
+
   res.render("thankyou");
 });
 
