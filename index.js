@@ -9,6 +9,12 @@ var path = require("iedriver").path;
 var sleep = require("time-sleep");
 // const { Builder, By } = require("selenium-webdriver");
 
+let options = new chrome.Options();
+//Below arguments are critical for Heroku deployment
+options.addArguments("--headless");
+options.addArguments("--disable-gpu");
+options.addArguments("--no-sandbox");
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -29,6 +35,9 @@ app.post("/", (req, res) => {
   var newString = SessionID.replace(/-/g, "");
   var By = webdriver.By,
     until = webdriver.until;
+
+
+
   url =
     "https://join.zoho.com/assist-join?key=" +
     newString +
