@@ -6,14 +6,6 @@ const webdriver = require("selenium-webdriver");
 const chromeDriver = require("chromedriver"); //chrome
 var ie = require("selenium-webdriver/ie");
 var path = require("iedriver").path;
-var sleep = require("time-sleep");
-// const { Builder, By } = require("selenium-webdriver");
-
-let options = new chrome.Options();
-//Below arguments are critical for Heroku deployment
-options.addArguments("--headless");
-options.addArguments("--disable-gpu");
-options.addArguments("--no-sandbox");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
